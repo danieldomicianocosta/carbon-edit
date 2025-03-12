@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "59a93d2a-befb-4fca-8f8a-942d70a45155",
+		"name": "Proposal Commission Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42721812"
+	},
+	"item": [
+		{
+			"name": "Get All Proposal Commissions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-commissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-commissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Commission by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-commissions/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-commissions",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Commissions by Proposal Detail ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-commissions/proposal-detail/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-commissions",
+						"proposal-detail",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Commissions by Person ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-commissions/person/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-commissions",
+						"person",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Proposal Commission",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalDetailId\": 330,\n    \"personId\": 5,\n    \"commissionTypeId\": 1,\n    \"percentage\": 10.0,\n    \"value\": 5000.0,\n    \"observations\": \"Sales commission\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-commissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-commissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Proposal Commission",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalDetailId\": 330,\n    \"personId\": 5,\n    \"commissionTypeId\": 1,\n    \"percentage\": 12.5,\n    \"value\": 6250.0,\n    \"observations\": \"Updated sales commission\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-commissions/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-commissions",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Proposal Commission",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-commissions/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-commissions",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Proposal Commissions by Proposal Detail ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-commissions/proposal-detail/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-commissions",
+						"proposal-detail",
+						"330"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

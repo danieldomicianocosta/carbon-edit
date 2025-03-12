@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "59a93d2a-befb-4fca-8f8a-942d70a45154",
+		"name": "Proposal Document Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42721812"
+	},
+	"item": [
+		{
+			"name": "Get All Proposal Documents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-documents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Documents by Proposal ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-documents/proposal/2907",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-documents",
+						"proposal",
+						"2907"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Documents by Document ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-documents/document/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-documents",
+						"document",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Proposal Document",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalId\": 330,\n    \"documentId\": 5,\n    \"observations\": \"Important contract document\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-documents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Proposal Document",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-documents/proposal/330/document/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-documents",
+						"proposal",
+						"330",
+						"document",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Proposal Documents by Proposal ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-documents/proposal/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-documents",
+						"proposal",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Proposal Documents by Document ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-documents/document/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-documents",
+						"document",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

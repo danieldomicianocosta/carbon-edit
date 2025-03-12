@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "59a93d2a-befb-4fca-8f8a-942d70a45152",
+		"name": "Proposal Detail Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42721812"
+	},
+	"item": [
+		{
+			"name": "Get All Proposal Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Detail by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-details/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-details",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Detail by Proposal ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-details/proposal/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-details",
+						"proposal",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Proposal Detail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalId\": 330,\n    \"partnerId\": 1,\n    \"partnerBrandId\": 2,\n    \"channelId\": 3,\n    \"priceListId\": 4,\n    \"paymentRuleId\": 5,\n    \"specificPaymentRuleId\": null,\n    \"specificPaymentConditionId\": null,\n    \"specificPaymentEventId\": null,\n    \"specificPaymentMethodId\": null,\n    \"paymentMethodId\": 6,\n    \"contactId\": 7,\n    \"jobId\": 8,\n    \"deliveryDate\": \"2023-10-15T00:00:00\",\n    \"deliveryAddress\": \"123 Main St\",\n    \"deliveryCity\": \"New York\",\n    \"deliveryState\": \"NY\",\n    \"deliveryZipCode\": \"10001\",\n    \"deliveryCountry\": \"USA\",\n    \"deliveryComplement\": \"Apt 4B\",\n    \"deliveryNumber\": \"123\",\n    \"deliveryNeighborhood\": \"Downtown\",\n    \"deliveryReference\": \"Near Central Park\",\n    \"deliveryLatitude\": 40.7128,\n    \"deliveryLongitude\": -74.0060,\n    \"deliveryContactName\": \"John Doe\",\n    \"deliveryContactPhone\": \"555-1234\",\n    \"deliveryContactEmail\": \"john.doe@example.com\",\n    \"observations\": \"Handle with care\",\n    \"internalObservations\": \"VIP customer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Proposal Detail",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalId\": 330,\n    \"partnerId\": 1,\n    \"partnerBrandId\": 2,\n    \"channelId\": 3,\n    \"priceListId\": 4,\n    \"paymentRuleId\": 5,\n    \"specificPaymentRuleId\": null,\n    \"specificPaymentConditionId\": null,\n    \"specificPaymentEventId\": null,\n    \"specificPaymentMethodId\": null,\n    \"paymentMethodId\": 6,\n    \"contactId\": 7,\n    \"jobId\": 8,\n    \"deliveryDate\": \"2023-10-15T00:00:00\",\n    \"deliveryAddress\": \"123 Main St\",\n    \"deliveryCity\": \"New York\",\n    \"deliveryState\": \"NY\",\n    \"deliveryZipCode\": \"10001\",\n    \"deliveryCountry\": \"USA\",\n    \"deliveryComplement\": \"Apt 4B\",\n    \"deliveryNumber\": \"123\",\n    \"deliveryNeighborhood\": \"Downtown\",\n    \"deliveryReference\": \"Near Central Park\",\n    \"deliveryLatitude\": 40.7128,\n    \"deliveryLongitude\": -74.0060,\n    \"deliveryContactName\": \"John Doe\",\n    \"deliveryContactPhone\": \"555-1234\",\n    \"deliveryContactEmail\": \"john.doe@example.com\",\n    \"observations\": \"Handle with care\",\n    \"internalObservations\": \"VIP customer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-details/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-details",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Proposal Detail",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-details/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-details",
+						"330"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

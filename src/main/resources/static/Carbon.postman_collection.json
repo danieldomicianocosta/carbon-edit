@@ -1,0 +1,883 @@
+{
+	"info": {
+		"_postman_id": "59a93d2a-befb-4fca-8f8a-942d70a45150",
+		"name": "Carbon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42721812"
+	},
+	"item": [
+		{
+			"name": "Proposals",
+			"item": [
+				{
+					"name": "Get All Proposals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposals/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposals",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal by Number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposals/number/B2309-1A",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposals",
+								"number",
+								"B2309-1A"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal by Num and Cod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposals/num/1/cod/AA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposals",
+								"num",
+								"1",
+								"cod",
+								"AA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Proposal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proposalNumber\": \"B2309-1A\",\n    \"num\": 1,\n    \"cod\": \"AA\",\n    \"createDate\": \"2023-03-31T09:00:00\",\n    \"validityDate\": \"2023-09-25T06:54:50\",\n    \"statusClaId\": 68,\n    \"amendmentsStatusCla\": 320,\n    \"finantialContact\": true,\n    \"documentContact\": true,\n    \"riskClaId\": 140,\n    \"immediateDeliveryClaId\": 40,\n    \"usrIdCreate\": 5,\n    \"usrIdLastUpdate\": 5,\n    \"schedulingClaId\": 462,\n    \"clusterName\": \"CLUSTER II\",\n    \"signatureContact\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Proposal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 330,\n    \"idProduction\": null,\n    \"proposalNumber\": \"B2309-1A\",\n    \"num\": 1,\n    \"cod\": \"AA\",\n    \"createDate\": \"2023-03-31T09:00:00\",\n    \"validityDate\": \"2023-09-25T06:54:50\",\n    \"finishedDate\": null,\n    \"statusClaId\": 68,\n    \"amendmentsStatusCla\": 320,\n    \"ledId\": null,\n    \"finantialContact\": true,\n    \"finantialContactName\": null,\n    \"finantialContactEmail\": null,\n    \"finantialContactPhone\": null,\n    \"documentContact\": true,\n    \"documentContactName\": null,\n    \"documentContactEmail\": null,\n    \"documentContactPhone\": null,\n    \"commercialContactName\": null,\n    \"commercialContactEmail\": null,\n    \"commercialContactPhone\": null,\n    \"riskClaId\": 140,\n    \"immediateDeliveryClaId\": 40,\n    \"contract\": null,\n    \"usrIdCreate\": 5,\n    \"usrIdLastUpdate\": 5,\n    \"lastUpdateDate\": \"2023-09-15T07:14:12\",\n    \"schedulingClaId\": 462,\n    \"contaAzulTriggered\": null,\n    \"clusterName\": \"CLUSTER II\",\n    \"contaAzulAmendments\": null,\n    \"signatureContact\": false,\n    \"basicContact\": null,\n    \"signatureClaId\": null,\n    \"customerName\": null,\n    \"customerEmail\": null,\n    \"customerPhone\": null,\n    \"finishedWithoutSaleClaId\": null,\n    \"finishedWithoutSaleComment\": null,\n    \"backofficeRejectedComment\": null,\n    \"coparticipationInternalCommission\": null,\n    \"proposalSentDate\": null,\n    \"proposalSent\": null,\n    \"revenueAmendments\": null,\n    \"totvsTriggered\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposals/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposals",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proposal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposals/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposals",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate Proposal",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposals/330/activate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposals",
+								"330",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate Proposal",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposals/330/deactivate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposals",
+								"330",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proposal Details",
+			"item": [
+				{
+					"name": "Get All Proposal Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal Detail by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-details/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-details",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal Detail by Proposal ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-details/proposal/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-details",
+								"proposal",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Proposal Detail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proposalId\": 330,\n    \"partnerId\": 1,\n    \"partnerBrandId\": 2,\n    \"channelId\": 3,\n    \"priceListId\": 4,\n    \"paymentRuleId\": 5,\n    \"specificPaymentRuleId\": null,\n    \"specificPaymentConditionId\": null,\n    \"specificPaymentEventId\": null,\n    \"specificPaymentMethodId\": null,\n    \"paymentMethodId\": 6,\n    \"contactId\": 7,\n    \"jobId\": 8,\n    \"deliveryDate\": \"2023-10-15T00:00:00\",\n    \"deliveryAddress\": \"123 Main St\",\n    \"deliveryCity\": \"New York\",\n    \"deliveryState\": \"NY\",\n    \"deliveryZipCode\": \"10001\",\n    \"deliveryCountry\": \"USA\",\n    \"deliveryComplement\": \"Apt 4B\",\n    \"deliveryNumber\": \"123\",\n    \"deliveryNeighborhood\": \"Downtown\",\n    \"deliveryReference\": \"Near Central Park\",\n    \"deliveryLatitude\": 40.7128,\n    \"deliveryLongitude\": -74.0060,\n    \"deliveryContactName\": \"John Doe\",\n    \"deliveryContactPhone\": \"555-1234\",\n    \"deliveryContactEmail\": \"john.doe@example.com\",\n    \"observations\": \"Handle with care\",\n    \"internalObservations\": \"VIP customer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Proposal Detail",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proposalId\": 330,\n    \"partnerId\": 1,\n    \"partnerBrandId\": 2,\n    \"channelId\": 3,\n    \"priceListId\": 4,\n    \"paymentRuleId\": 5,\n    \"specificPaymentRuleId\": null,\n    \"specificPaymentConditionId\": null,\n    \"specificPaymentEventId\": null,\n    \"specificPaymentMethodId\": null,\n    \"paymentMethodId\": 6,\n    \"contactId\": 7,\n    \"jobId\": 8,\n    \"deliveryDate\": \"2023-10-15T00:00:00\",\n    \"deliveryAddress\": \"123 Main St\",\n    \"deliveryCity\": \"New York\",\n    \"deliveryState\": \"NY\",\n    \"deliveryZipCode\": \"10001\",\n    \"deliveryCountry\": \"USA\",\n    \"deliveryComplement\": \"Apt 4B\",\n    \"deliveryNumber\": \"123\",\n    \"deliveryNeighborhood\": \"Downtown\",\n    \"deliveryReference\": \"Near Central Park\",\n    \"deliveryLatitude\": 40.7128,\n    \"deliveryLongitude\": -74.0060,\n    \"deliveryContactName\": \"John Doe\",\n    \"deliveryContactPhone\": \"555-1234\",\n    \"deliveryContactEmail\": \"john.doe@example.com\",\n    \"observations\": \"Handle with care\",\n    \"internalObservations\": \"VIP customer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-details/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-details",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proposal Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-details/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-details",
+								"330"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proposal Detail Vehicles",
+			"item": [
+				{
+					"name": "Get All Proposal Detail Vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal Detail Vehicle by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicles/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicles",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal Detail Vehicles by Proposal Detail ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicles/proposal-detail/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicles",
+								"proposal-detail",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Proposal Detail Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proposalDetailId\": 330,\n    \"modelId\": 1,\n    \"productId\": 2,\n    \"productModelId\": 3,\n    \"priceProductId\": 4,\n    \"quantity\": 1,\n    \"unitPrice\": 50000.00,\n    \"totalPrice\": 50000.00,\n    \"discount\": 0.00,\n    \"discountPercentage\": 0.00,\n    \"observations\": \"Standard model\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Proposal Detail Vehicle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proposalDetailId\": 330,\n    \"modelId\": 1,\n    \"productId\": 2,\n    \"productModelId\": 3,\n    \"priceProductId\": 4,\n    \"quantity\": 1,\n    \"unitPrice\": 50000.00,\n    \"totalPrice\": 50000.00,\n    \"discount\": 0.00,\n    \"discountPercentage\": 0.00,\n    \"observations\": \"Standard model with upgrades\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicles/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicles",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proposal Detail Vehicle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicles/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicles",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proposal Detail Vehicles by Proposal Detail ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicles/proposal-detail/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicles",
+								"proposal-detail",
+								"330"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proposal Detail Vehicle Items",
+			"item": [
+				{
+					"name": "Get All Proposal Detail Vehicle Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicle-items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicle-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal Detail Vehicle Item by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicle-items/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicle-items",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal Detail Vehicle Items by Proposal Detail Vehicle ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicle-items/proposal-detail-vehicle/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicle-items",
+								"proposal-detail-vehicle",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal Detail Vehicle Items by Seller ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicle-items/seller/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicle-items",
+								"seller",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Proposal Detail Vehicle Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proposalDetailVehicleId\": 330,\n    \"itemId\": 1,\n    \"itemModelId\": 2,\n    \"priceItemId\": 3,\n    \"priceItemModelId\": 4,\n    \"sellerId\": 5,\n    \"quantity\": 1,\n    \"unitPrice\": 1000.00,\n    \"totalPrice\": 1000.00,\n    \"discount\": 0.00,\n    \"discountPercentage\": 0.00,\n    \"observations\": \"Premium accessory\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicle-items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicle-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Proposal Detail Vehicle Item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proposalDetailVehicleId\": 330,\n    \"itemId\": 1,\n    \"itemModelId\": 2,\n    \"priceItemId\": 3,\n    \"priceItemModelId\": 4,\n    \"sellerId\": 5,\n    \"quantity\": 2,\n    \"unitPrice\": 1000.00,\n    \"totalPrice\": 2000.00,\n    \"discount\": 100.00,\n    \"discountPercentage\": 5.00,\n    \"observations\": \"Premium accessory - quantity updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicle-items/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicle-items",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proposal Detail Vehicle Item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicle-items/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicle-items",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proposal Detail Vehicle Items by Proposal Detail Vehicle ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-detail-vehicle-items/proposal-detail-vehicle/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-detail-vehicle-items",
+								"proposal-detail-vehicle",
+								"330"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proposal Documents",
+			"item": [
+				{
+					"name": "Get All Proposal Documents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-documents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-documents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal Documents by Proposal ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-documents/proposal/2907",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-documents",
+								"proposal",
+								"2907"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Proposal Documents by Document ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-documents/document/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-documents",
+								"document",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Proposal Document",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proposalId\": 330,\n    \"documentId\": 5,\n    \"observations\": \"Important contract document\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-documents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-documents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proposal Document",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-documents/proposal/330/document/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-documents",
+								"proposal",
+								"330",
+								"document",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proposal Documents by Proposal ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal-documents/proposal/330",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal-documents",
+								"proposal",
+								"330"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proposal Documents by Document ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:

@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "59a93d2a-befb-4fca-8f8a-942d70a45157",
+		"name": "Proposal Fup Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42721812"
+	},
+	"item": [
+		{
+			"name": "Get All Proposal Fups",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-fups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-fups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Fup by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-fups/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-fups",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Fups by Proposal ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-fups/proposal/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-fups",
+						"proposal",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Fups by User ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-fups/user/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-fups",
+						"user",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Fups by Media Classifier ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-fups/media/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-fups",
+						"media",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Fups by Follow-Up Type Classifier ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-fups/follow-up-type/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-fups",
+						"follow-up-type",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Fups by Date Range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-fups/date-range?startDate=2023-01-01T00:00:00&endDate=2023-12-31T23:59:59",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-fups",
+						"date-range"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2023-01-01T00:00:00"
+						},
+						{
+							"key": "endDate",
+							"value": "2023-12-31T23:59:59"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Proposal Fup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalId\": 330,\n    \"userId\": 5,\n    \"date\": \"2023-09-15T10:30:00\",\n    \"mediaClassifierId\": 10,\n    \"followUpTypeClassifierId\": 15,\n    \"description\": \"Follow-up call with customer\",\n    \"observations\": \"Customer requested additional information about delivery options\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-fups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-fups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Proposal Fup",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalId\": 330,\n    \"userId\": 5,\n    \"date\": \"2023-09-15T10:30:00\",\n    \"mediaClassifierId\": 10,\n    \"followUpTypeClassifierId\": 15,\n    \"description\": \"Follow-up call with customer\",\n    \"observations\": \"Customer requested additional information about delivery options and financing plans\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-fups/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-fups",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Proposal Fup",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-fups/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-fups",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Proposal Fups by Proposal ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-fups/proposal/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-fups",
+						"proposal",
+						"330"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

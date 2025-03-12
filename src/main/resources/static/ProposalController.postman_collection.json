@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "59a93d2a-befb-4fca-8f8a-942d70a45151",
+		"name": "Proposal Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42721812"
+	},
+	"item": [
+		{
+			"name": "Get All Proposals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal by Number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/number/B2309-1A",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"number",
+						"B2309-1A"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal by Num and Cod",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/num/1/cod/AA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"num",
+						"1",
+						"cod",
+						"AA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Proposal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalNumber\": \"B2309-1A\",\n    \"num\": 1,\n    \"cod\": \"AA\",\n    \"createDate\": \"2023-03-31T09:00:00\",\n    \"validityDate\": \"2023-09-25T06:54:50\",\n    \"statusClaId\": 68,\n    \"amendmentsStatusCla\": 320,\n    \"finantialContact\": true,\n    \"documentContact\": true,\n    \"riskClaId\": 140,\n    \"immediateDeliveryClaId\": 40,\n    \"usrIdCreate\": 5,\n    \"usrIdLastUpdate\": 5,\n    \"schedulingClaId\": 462,\n    \"clusterName\": \"CLUSTER II\",\n    \"signatureContact\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Proposal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 330,\n    \"idProduction\": null,\n    \"proposalNumber\": \"B2309-1A\",\n    \"num\": 1,\n    \"cod\": \"AA\",\n    \"createDate\": \"2023-03-31T09:00:00\",\n    \"validityDate\": \"2023-09-25T06:54:50\",\n    \"finishedDate\": null,\n    \"statusClaId\": 68,\n    \"amendmentsStatusCla\": 320,\n    \"ledId\": null,\n    \"finantialContact\": true,\n    \"finantialContactName\": null,\n    \"finantialContactEmail\": null,\n    \"finantialContactPhone\": null,\n    \"documentContact\": true,\n    \"documentContactName\": null,\n    \"documentContactEmail\": null,\n    \"documentContactPhone\": null,\n    \"commercialContactName\": null,\n    \"commercialContactEmail\": null,\n    \"commercialContactPhone\": null,\n    \"riskClaId\": 140,\n    \"immediateDeliveryClaId\": 40,\n    \"contract\": null,\n    \"usrIdCreate\": 5,\n    \"usrIdLastUpdate\": 5,\n    \"lastUpdateDate\": \"2023-09-15T07:14:12\",\n    \"schedulingClaId\": 462,\n    \"contaAzulTriggered\": null,\n    \"clusterName\": \"CLUSTER II\",\n    \"contaAzulAmendments\": null,\n    \"signatureContact\": false,\n    \"basicContact\": null,\n    \"signatureClaId\": null,\n    \"customerName\": null,\n    \"customerEmail\": null,\n    \"customerPhone\": null,\n    \"finishedWithoutSaleClaId\": null,\n    \"finishedWithoutSaleComment\": null,\n    \"backofficeRejectedComment\": null,\n    \"coparticipationInternalCommission\": null,\n    \"proposalSentDate\": null,\n    \"proposalSent\": null,\n    \"revenueAmendments\": null,\n    \"totvsTriggered\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Proposal",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate Proposal",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/330/activate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"330",
+						"activate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deactivate Proposal",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/330/deactivate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"330",
+						"deactivate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

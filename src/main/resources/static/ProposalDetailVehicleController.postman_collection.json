@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "59a93d2a-befb-4fca-8f8a-942d70a45153",
+		"name": "Proposal Detail Vehicle Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42721812"
+	},
+	"item": [
+		{
+			"name": "Get All Proposal Detail Vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-detail-vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-detail-vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Detail Vehicle by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-detail-vehicles/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-detail-vehicles",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposal Detail Vehicles by Proposal Detail ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-detail-vehicles/proposal-detail/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-detail-vehicles",
+						"proposal-detail",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Proposal Detail Vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalDetailId\": 330,\n    \"modelId\": 1,\n    \"productId\": 2,\n    \"productModelId\": 3,\n    \"priceProductId\": 4,\n    \"quantity\": 1,\n    \"unitPrice\": 50000.00,\n    \"totalPrice\": 50000.00,\n    \"discount\": 0.00,\n    \"discountPercentage\": 0.00,\n    \"observations\": \"Standard model\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-detail-vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-detail-vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Proposal Detail Vehicle",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalDetailId\": 330,\n    \"modelId\": 1,\n    \"productId\": 2,\n    \"productModelId\": 3,\n    \"priceProductId\": 4,\n    \"quantity\": 1,\n    \"unitPrice\": 50000.00,\n    \"totalPrice\": 50000.00,\n    \"discount\": 0.00,\n    \"discountPercentage\": 0.00,\n    \"observations\": \"Standard model with upgrades\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-detail-vehicles/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-detail-vehicles",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Proposal Detail Vehicle",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-detail-vehicles/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-detail-vehicles",
+						"330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Proposal Detail Vehicles by Proposal Detail ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proposal-detail-vehicles/proposal-detail/330",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposal-detail-vehicles",
+						"proposal-detail",
+						"330"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
