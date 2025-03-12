@@ -460,16 +460,13 @@ public class CompleteProposalServiceImpl implements CompleteProposalService {
             proposalDetailVehicleItemService.deleteByProposalDetailVehicleId(vehicleId);
         }
         
-        // Create new items
-        for (ProposalDetailVehicleItemRequestDTO itemDTO : itemRequestDTOs) {
-            // Find the vehicle for this item
-            Integer vehicleId = itemDTO.getProposalDetailVehicleId();
-            Optional<ProposalDetailVehicle> vehicleOpt = vehicles.stream()
-                    .filter(v -> v.getId().equals(vehicleId))
-                    .findFirst();
+        // If there's only one vehicle, use it for all items
+        // This is a workaround for the issue where the vehicle IDs change after recreation
+        if (vehicles.size() == 1 && !itemRequestDTOs.isEmpty()) {
+            ProposalDetailVehicle vehicle = vehicles.get(0);
             
-            if (vehicleOpt.isPresent()) {
-                // Create the item
+            for (ProposalDetailVehicleItemRequestDTO itemDTO : itemRequestDTOs) {
+                // Create the item with the single vehicle
                 ProposalDetailVehicleItem item = ProposalDetailVehicleItem.builder()
                         .amountDiscount(itemDTO.getAmountDiscount())
                         .percentDiscount(itemDTO.getPercentDiscount())
@@ -481,12 +478,40 @@ public class CompleteProposalServiceImpl implements CompleteProposalService {
                         .priceItemModelId(itemDTO.getPriceItemModelId())
                         .amendment(itemDTO.getAmendment())
                         .immediateDelivery(itemDTO.getImmediateDelivery())
-                        .proposalDetailVehicle(vehicleOpt.get())
+                        .proposalDetailVehicle(vehicle)
                         .build();
                 
                 proposalDetailVehicleItemService.create(item);
-            } else {
-                log.warn("Veículo com ID {} não encontrado para o item", vehicleId);
+            }
+        } else {
+            // For multiple vehicles, try to match by ID (though this may not work if IDs have changed)
+            for (ProposalDetailVehicleItemRequestDTO itemDTO : itemRequestDTOs) {
+                // Find the vehicle for this item
+                Integer vehicleId = itemDTO.getProposalDetailVehicleId();
+                Optional<ProposalDetailVehicle> vehicleOpt = vehicles.stream()
+                        .filter(v -> v.getId().equals(vehicleId))
+                        .findFirst();
+                
+                if (vehicleOpt.isPresent()) {
+                    // Create the item
+                    ProposalDetailVehicleItem item = ProposalDetailVehicleItem.builder()
+                            .amountDiscount(itemDTO.getAmountDiscount())
+                            .percentDiscount(itemDTO.getPercentDiscount())
+                            .finalPrice(itemDTO.getFinalPrice())
+                            .tablePriceTax(itemDTO.getTablePriceTax())
+                            .forFree(itemDTO.getForFree())
+                            .sellerId(itemDTO.getSellerId())
+                            .priceItemId(itemDTO.getPriceItemId())
+                            .priceItemModelId(itemDTO.getPriceItemModelId())
+                            .amendment(itemDTO.getAmendment())
+                            .immediateDelivery(itemDTO.getImmediateDelivery())
+                            .proposalDetailVehicle(vehicleOpt.get())
+                            .build();
+                    
+                    proposalDetailVehicleItemService.create(item);
+                } else {
+                    log.warn("Veículo com ID {} não encontrado para o item", vehicleId);
+                }
             }
         }
     }
