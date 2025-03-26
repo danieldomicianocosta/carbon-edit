@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "f8a5e9c7-3b2d-4e5f-8d9a-1c2b3d4e5f6a",
+		"name": "ProposalBFFController",
+		"description": "Coleção para testar os endpoints do BFF para propostas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buscar Propostas com Filtros",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"statusIds\": [1, 2, 3],\n    \"proposalNumber\": \"PROP\",\n    \"updateDateStart\": \"2025-01-01T00:00:00\",\n    \"updateDateEnd\": \"2025-12-31T23:59:59\",\n    \"channelId\": 456,\n    \"partnerId\": 789,\n    \"vehicleId\": 101,\n    \"modelId\": 202,\n    \"page\": 0,\n    \"size\": 10,\n    \"sortBy\": \"lastUpdateDate\",\n    \"sortDirection\": \"desc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/bff/proposals/search",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bff",
+						"proposals",
+						"search"
+					]
+				},
+				"description": "Busca propostas com filtros e paginação, retornando uma lista paginada de resumos de propostas"
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Proposta Completa",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/bff/proposals/{{proposal_id}}/complete",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bff",
+						"proposals",
+						"{{proposal_id}}",
+						"complete"
+					]
+				},
+				"description": "Retorna uma visão completa de uma proposta com todas as entidades relacionadas"
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Resumo da Proposta",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/bff/proposals/{{proposal_id}}/summary",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bff",
+						"proposals",
+						"{{proposal_id}}",
+						"summary"
+					]
+				},
+				"description": "Retorna uma visão simplificada de uma proposta, otimizada para visualizações em lista ou dashboards"
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Proposta Completa",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposal\": {\n        \"proposalNumber\": \"PROP-12345\",\n        \"statusClaId\": 1,\n        \"customerName\": \"Cliente Exemplo\",\n        \"customerEmail\": \"cliente@exemplo.com\",\n        \"customerPhone\": \"(11) 98765-4321\"\n    },\n    \"proposalDetail\": {\n        \"sellerId\": 123,\n        \"channelId\": 456,\n        \"partnerId\": 789\n    },\n    \"proposalDetailVehicles\": [\n        {\n            \"vehicleId\": 101,\n            \"modelId\": 202,\n            \"version\": \"2.0 Turbo\",\n            \"modelYear\": 2025,\n            \"productFinalPrice\": 150000.00\n        }\n    ],\n    \"proposalDetailVehicleItems\": [\n        {\n            \"proposalDetailVehicleId\": 101,\n            \"priceItemId\": 303,\n            \"finalPrice\": 5000.00,\n            \"forFree\": false\n        }\n    ],\n    \"proposalCommissions\": [\n        {\n            \"sellerId\": 123,\n            \"amount\": 3000.00,\n            \"percent\": 2.0\n        }\n    ],\n    \"proposalDocuments\": [\n        {\n            \"documentId\": 404\n        },\n        {\n            \"documentId\": 505\n        }\n    ],\n    \"proposalFups\": [\n        {\n            \"userId\": 123,\n            \"mediaClassifierId\": 1,\n            \"followUpTypeClassifierId\": 2,\n            \"comment\": \"Contato realizado com sucesso\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/bff/proposals/{{proposal_id}}/complete",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bff",
+						"proposals",
+						"{{proposal_id}}",
+						"complete"
+					]
+				},
+				"description": "Atualiza todos os aspectos de uma proposta em uma única requisição"
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Status da Proposta",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"statusClaId\": 2,\n    \"comment\": \"Proposta rejeitada por falta de documentação\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/bff/proposals/{{proposal_id}}/status",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bff",
+						"proposals",
+						"{{proposal_id}}",
+						"status"
+					]
+				},
+				"description": "Atualiza apenas o status de uma proposta, operação comum e simplificada"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "seu_token_jwt_aqui",
+			"type": "string"
+		},
+		{
+			"key": "proposal_id",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}

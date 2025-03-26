@@ -1,6 +1,7 @@
 package com.carbon.refactor.domain.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
@@ -17,15 +19,19 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "proposal_detail", uniqueConstraints = {
     @UniqueConstraint(name = "pps_id_UNIQUE", columnNames = {"pps_id"})
 })
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = {"proposal", "proposalDetailVehicles"})
+@Builder(toBuilder = true)
 public class ProposalDetail {
     
     @Id
@@ -72,4 +78,8 @@ public class ProposalDetail {
     
     @Column(name = "sale_date_additive")
     private LocalDateTime saleDateAdditive;
+    
+    @OneToMany(mappedBy = "proposalDetail", fetch = FetchType.LAZY)
+    @Builder.Default
+    private List<ProposalDetailVehicle> proposalDetailVehicles = new ArrayList<>();
 }
