@@ -1,0 +1,12 @@
+graph LR
+    proposal -->|pps_id_production| proposal
+    proposal_approval -->|pps_id| proposal
+    proposal_commission -->|ppd_id| proposal_detail
+    proposal_detail -->|pps_id| proposal
+    proposal_detail_vehicle -->|ppd_id| proposal_detail
+    proposal_detail_vehicle_item -->|pdv_id| proposal_detail_vehicle
+    proposal_document -->|pps_id| proposal
+    proposal_fup -->|pps_id| proposal
+    proposal_person_client -->|pps_id| proposal
+    proposal_state_history -->|pps_id| proposal
+    proposal_version -->|pps_id| proposal

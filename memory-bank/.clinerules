@@ -1,0 +1,127 @@
+# Carbon Backend Project Intelligence
+
+## Code Organization Patterns
+
+1. **Package Structure**
+   - Domain-driven design approach with clear separation of concerns
+   - Packages organized by feature/domain area first, then by technical layer
+   - Example: `com.carbon.refactor.application.service` vs `com.carbon.refactor.domain.service`
+
+2. **Naming Conventions**
+   - Entity classes have no suffix (e.g., `Proposal`)
+   - Repository interfaces use `Repository` suffix (e.g., `ProposalRepository`)
+   - Service interfaces have no implementation details in the name (e.g., `ProposalService`)
+   - Service implementations use `Impl` suffix (e.g., `ProposalServiceImpl`)
+   - DTOs use `DTO` suffix (e.g., `ProposalRequestDTO`)
+   - Controllers use `Controller` suffix (e.g., `ProposalController`)
+
+3. **File Organization**
+   - SQL queries stored in separate files under resources/db
+   - Documentation in Markdown format under resources/documentation
+   - Postman collections for API testing under resources/static
+
+## Implementation Patterns
+
+1. **Repository Pattern**
+   - Domain repositories defined as interfaces in the domain layer
+   - JPA implementations in the infrastructure layer
+   - Custom queries using @Query annotation or separate SQL files
+
+2. **Service Pattern**
+   - Services defined as interfaces in the domain layer
+   - Implementations in the application layer
+   - Business logic contained within service implementations
+
+3. **Rule Pattern**
+   - Business rules, especially for status transitions, implemented as separate classes
+   - Rules follow a common interface
+   - Factory pattern used to create and manage rules
+
+4. **DTO Pattern**
+   - Separate DTOs for requests and responses
+   - DTOs used to isolate the API from the domain model
+   - Mappers used to convert between DTOs and domain entities
+
+5. **Exception Handling**
+   - Custom exceptions for business and technical errors
+   - Exceptions used to communicate specific error conditions
+
+## Critical Implementation Paths
+
+1. **Proposal Status Workflow**
+   - Status transitions governed by rule classes
+   - Rules registered in configuration classes
+   - Factory used to create appropriate rules
+
+2. **Proposal Management**
+   - Proposals have multiple related entities (details, vehicles, documents, etc.)
+   - Services coordinate operations across these entities
+
+3. **Security**
+   - JWT-based authentication
+   - Access control utilities for authorization
+
+## Project Preferences
+
+1. **Architecture**
+   - Clear separation of concerns
+   - Domain-driven design principles
+   - Interface-based design
+
+2. **Testing**
+   - Unit tests for business logic
+   - Test classes named after the class they test with "Test" suffix
+
+3. **Documentation**
+   - Markdown for documentation
+   - Postman collections for API documentation
+
+## Known Challenges
+
+1. **Service Implementation Duplication**
+   - Multiple implementations of some services (e.g., CompleteProposalService)
+   - May indicate ongoing refactoring or feature evolution
+
+2. **Complex Status Transitions**
+   - Multiple rules for status transitions
+   - May require careful coordination
+
+3. **Entity Relationships**
+   - Complex relationships between proposal-related entities
+   - May require careful management of dependencies
+
+## Evolution of Project Decisions
+
+As this is the initial memory bank setup, there is no documented history of project decisions. Future updates will track significant decisions and their evolution.
+
+## Tool Usage Patterns
+
+1. **Spring Boot**
+   - Dependency injection for components
+   - Configuration classes for setup
+   - Annotations for defining beans and endpoints
+
+2. **JPA/Hibernate**
+   - Entity annotations for mapping to database
+   - Repository interfaces for data access
+   - Custom queries for complex operations
+
+3. **Testing**
+   - JUnit for unit testing
+   - Spring Test for integration testing
+
+## Working with This Project
+
+1. **Understanding the Domain**
+   - Start with the domain entities to understand the core concepts
+   - Review the status enum to understand the workflow
+   - Examine the rule implementations to understand business logic
+
+2. **Making Changes**
+   - Respect the layered architecture
+   - Implement new features following existing patterns
+   - Ensure proper test coverage for changes
+
+3. **Testing**
+   - Write unit tests for business logic
+   - Use Postman collections for API testing

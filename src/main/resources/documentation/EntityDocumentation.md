@@ -4,6 +4,7 @@ This document provides detailed information about the database tables and their 
 
 ## Table of Contents
 
+### Core Proposal Entities
 - [Proposal](#proposal)
 - [ProposalCommission](#proposalcommission)
 - [ProposalDetail](#proposaldetail)
@@ -11,38 +12,46 @@ This document provides detailed information about the database tables and their 
 - [ProposalDetailVehicleItem](#proposaldetailvehicleitem)
 - [ProposalDocument](#proposaldocument)
 - [ProposalFup](#proposalfup)
-- [AccessList](#accesslist)
-- [AccessListCheckpoint](#accesslistcheckpoint)
-- [Checkpoint](#checkpoint)
-- [Channel](#channel)
-- [Brand](#brand)
-- [CommissionType](#commissiontype)
+- [ProposalApprovalRule](#proposalapprovalrule)
 - [ContactSimplified](#contactsimplified)
 - [Document](#document)
-- [Item](#item)
-- [ItemModel](#itemmodel)
-- [Job](#job)
-- [Model](#model)
-- [Partner](#partner)
-- [PartnerBrand](#partnerbrand)
-- [PaymentMethod](#paymentmethod)
-- [PaymentRule](#paymentrule)
-- [PaymentRuleInstallment](#paymentruleinstallment)
-- [PriceItem](#priceitem)
-- [PriceItemModel](#priceitemmodel)
-- [PriceList](#pricelist)
-- [PriceListPartner](#pricelistpartner)
-- [PriceProduct](#priceproduct)
+
+### Product and Pricing Entities
 - [Product](#product)
 - [ProductModel](#productmodel)
 - [ProductModelBonus](#productmodelbonus)
-- [ProposalApprovalRule](#proposalapprovalrule)
+- [PriceList](#pricelist)
+- [PriceListPartner](#pricelistpartner)
+- [PriceProduct](#priceproduct)
+- [PriceItem](#priceitem)
+- [PriceItemModel](#priceitemmodel)
+- [Item](#item)
+- [ItemModel](#itemmodel)
+- [Brand](#brand)
+- [Model](#model)
+- [CommissionType](#commissiontype)
+
+### Partner and Seller Entities
+- [Partner](#partner)
+- [PartnerBrand](#partnerbrand)
 - [Seller](#seller)
 - [SellerPartner](#sellerpartner)
+- [Channel](#channel)
+- [Job](#job)
+
+### Payment-Related Entities
+- [PaymentMethod](#paymentmethod)
+- [PaymentRule](#paymentrule)
+- [PaymentRuleInstallment](#paymentruleinstallment)
 - [SpecificPaymentCondition](#specificpaymentcondition)
 - [SpecificPaymentEvent](#specificpaymentevent)
 - [SpecificPaymentMethod](#specificpaymentmethod)
 - [SpecificPaymentRule](#specificpaymentrule)
+
+### Access Control Entities
+- [AccessList](#accesslist)
+- [AccessListCheckpoint](#accesslistcheckpoint)
+- [Checkpoint](#checkpoint)
 
 ## Proposal
 

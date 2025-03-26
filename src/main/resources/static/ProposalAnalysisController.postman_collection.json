@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+		"name": "ProposalAnalysisController",
+		"description": "Collection for testing the Proposal Analysis endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Proposals by Status ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/analysis/proposals/status/68",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"analysis",
+						"proposals",
+						"status",
+						"68"
+					]
+				},
+				"description": "Get all proposals with the status ID 68 (FINALIZADO_COM_VENDA)"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposals by Status ID with Pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/analysis/proposals/status/68/paginated?page=0&size=10&sort=createDate,desc",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"analysis",
+						"proposals",
+						"status",
+						"68",
+						"paginated"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "createDate,desc"
+						}
+					]
+				},
+				"description": "Get all proposals with the status ID 68 (FINALIZADO_COM_VENDA) with pagination"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposals by Status Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/analysis/proposals/status-name?statusName=FINALIZADO_COM_VENDA",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"analysis",
+						"proposals",
+						"status-name"
+					],
+					"query": [
+						{
+							"key": "statusName",
+							"value": "FINALIZADO_COM_VENDA"
+						}
+					]
+				},
+				"description": "Get all proposals with the status name FINALIZADO_COM_VENDA"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposals by Status Name with Pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/analysis/proposals/status-name/paginated?statusName=FINALIZADO_COM_VENDA&page=0&size=10&sort=createDate,desc",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"analysis",
+						"proposals",
+						"status-name",
+						"paginated"
+					],
+					"query": [
+						{
+							"key": "statusName",
+							"value": "FINALIZADO_COM_VENDA"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "createDate,desc"
+						}
+					]
+				},
+				"description": "Get all proposals with the status name FINALIZADO_COM_VENDA with pagination"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposals by Status ID - Invalid ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/analysis/proposals/status/999",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"analysis",
+						"proposals",
+						"status",
+						"999"
+					]
+				},
+				"description": "Get all proposals with an invalid status ID (should return an error)"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposals by Status Name - Invalid Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/analysis/proposals/status-name?statusName=INVALID_STATUS",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"analysis",
+						"proposals",
+						"status-name"
+					],
+					"query": [
+						{
+							"key": "statusName",
+							"value": "INVALID_STATUS"
+						}
+					]
+				},
+				"description": "Get all proposals with an invalid status name (should return an error)"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proposals Count by Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/analysis/proposals/count-by-status",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"analysis",
+						"proposals",
+						"count-by-status"
+					]
+				},
+				"description": "Get the count of proposals grouped by status. This endpoint is particularly useful for creating charts and dashboards."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
