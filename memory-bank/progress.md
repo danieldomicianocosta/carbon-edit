@@ -71,11 +71,12 @@ The presence of multiple service implementations with "Backup" and "Old" suffixe
 
 ## Known Issues
 
-Without more specific context, potential issues might include:
-
 1. **Technical Debt**:
    - Multiple implementations of CompleteProposalService (with Backup and Old suffixes)
    - Potential duplication in service implementations
+   - ✅ FIXED: Apache Camel components disabled due to Jakarta EE vs Java EE compatibility issues (resolved by upgrading to Camel 4.x)
+   - ✅ FIXED: Camel 4.x Simple language syntax for accessing exchange properties (changed from `${property.xxx}` to `${exchangeProperty.xxx}`)
+   - ✅ FIXED: Camel bean registry issues (resolved by adding explicit bean names to repository implementations and creating a CamelRepositoryConfig class)
 
 2. **Documentation Gaps**:
    - The complete set of proposal statuses and valid transitions may not be fully documented
@@ -87,6 +88,10 @@ Without more specific context, potential issues might include:
 4. **Potential Performance Concerns**:
    - SQL files suggest complex queries that might benefit from optimization
    - Large data volumes might require performance tuning
+
+5. **Compatibility Issues**:
+   - ✅ FIXED: Spring Boot 3.4.3 uses Jakarta EE (jakarta.*) packages, but Apache Camel components still use Java EE (javax.*) packages (resolved by upgrading to Camel 4.x)
+   - ✅ FIXED: Bean definition conflicts between CompleteProposalController implementations
 
 ## Next Development Priorities
 

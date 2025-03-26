@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "e5a7b8c9-d0e1-4f2g-h3i4-j5k6l7m8n9o0",
+		"name": "Camel Proposal Routes",
+		"description": "Coleção para testar as rotas Camel para propostas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buscar Proposta Completa",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/{{proposalId}}/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"{{proposalId}}",
+						"complete"
+					]
+				},
+				"description": "Busca uma proposta completa pelo ID, incluindo todos os dados relacionados."
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Proposta Completa",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposal\": {\n        \"id\": {{proposalId}},\n        \"statusClaId\": 1,\n        \"statusDate\": \"2025-03-26T00:00:00\",\n        \"creationDate\": \"2025-03-26T00:00:00\",\n        \"customerId\": 1,\n        \"sellerId\": 1,\n        \"dealershipId\": 1\n    },\n    \"proposalDetail\": {\n        \"id\": null,\n        \"proposalId\": {{proposalId}},\n        \"paymentTypeId\": 1,\n        \"deliveryDate\": \"2025-04-15T00:00:00\",\n        \"observations\": \"Observações atualizadas via Camel\"\n    },\n    \"proposalDetailVehicles\": [\n        {\n            \"id\": null,\n            \"proposalDetailId\": null,\n            \"vehicleId\": 1,\n            \"colorId\": 1,\n            \"year\": 2025,\n            \"price\": 100000.00,\n            \"quantity\": 1\n        }\n    ],\n    \"proposalDetailVehicleItems\": [\n        {\n            \"id\": null,\n            \"proposalDetailVehicleId\": null,\n            \"priceItemId\": 1,\n            \"priceItemModelId\": 1,\n            \"sellerId\": 1,\n            \"finalPrice\": 5000.00,\n            \"tablePriceTax\": 10.0,\n            \"percentDiscount\": 5.0,\n            \"amountDiscount\": 250.00,\n            \"forFree\": false,\n            \"amendment\": false,\n            \"immediateDelivery\": true\n        }\n    ],\n    \"proposalCommissions\": [\n        {\n            \"id\": null,\n            \"proposalDetailId\": null,\n            \"sellerId\": 1,\n            \"commissionTypeId\": 1,\n            \"value\": 1000.00,\n            \"percentage\": 1.0\n        }\n    ],\n    \"proposalDocuments\": [\n        {\n            \"documentId\": 1\n        }\n    ],\n    \"proposalFups\": [\n        {\n            \"id\": null,\n            \"proposalId\": {{proposalId}},\n            \"date\": \"2025-03-26T00:00:00\",\n            \"userId\": 1,\n            \"description\": \"Acompanhamento via Camel\",\n            \"contactTypeId\": 1\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/{{proposalId}}/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"{{proposalId}}",
+						"complete"
+					]
+				},
+				"description": "Atualiza uma proposta completa pelo ID, incluindo todos os dados relacionados."
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Apenas Proposta Básica",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposal\": {\n        \"id\": {{proposalId}},\n        \"statusClaId\": 2,\n        \"statusDate\": \"2025-03-26T00:00:00\",\n        \"creationDate\": \"2025-03-26T00:00:00\",\n        \"customerId\": 1,\n        \"sellerId\": 1,\n        \"dealershipId\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/{{proposalId}}/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"{{proposalId}}",
+						"complete"
+					]
+				},
+				"description": "Atualiza apenas a proposta básica, demonstrando a capacidade de atualização parcial."
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Apenas Detalhes da Proposta",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalDetail\": {\n        \"id\": null,\n        \"proposalId\": {{proposalId}},\n        \"paymentTypeId\": 2,\n        \"deliveryDate\": \"2025-05-15T00:00:00\",\n        \"observations\": \"Apenas detalhes atualizados via Camel\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/{{proposalId}}/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"{{proposalId}}",
+						"complete"
+					]
+				},
+				"description": "Atualiza apenas os detalhes da proposta, demonstrando a capacidade de atualização parcial."
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Apenas Veículos da Proposta",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proposalDetailVehicles\": [\n        {\n            \"id\": null,\n            \"proposalDetailId\": null,\n            \"vehicleId\": 2,\n            \"colorId\": 2,\n            \"year\": 2025,\n            \"price\": 120000.00,\n            \"quantity\": 1\n        },\n        {\n            \"id\": null,\n            \"proposalDetailId\": null,\n            \"vehicleId\": 3,\n            \"colorId\": 3,\n            \"year\": 2025,\n            \"price\": 90000.00,\n            \"quantity\": 1\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proposals/{{proposalId}}/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proposals",
+						"{{proposalId}}",
+						"complete"
+					]
+				},
+				"description": "Atualiza apenas os veículos da proposta, demonstrando a capacidade de atualização parcial."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "proposalId",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}

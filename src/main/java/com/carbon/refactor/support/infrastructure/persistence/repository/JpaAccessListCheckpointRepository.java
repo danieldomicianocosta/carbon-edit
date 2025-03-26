@@ -7,12 +7,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.carbon.refactor.support.domain.entity.AccessListCheckpoint;
+import com.carbon.refactor.support.domain.entity.AccessListCheckpointId;
 
 /**
  * JPA repository interface for AccessListCheckpoint entities.
  */
 @Repository
-public interface JpaAccessListCheckpointRepository extends JpaRepository<AccessListCheckpoint, Integer> {
+public interface JpaAccessListCheckpointRepository extends JpaRepository<AccessListCheckpoint, AccessListCheckpointId> {
     
     /**
      * Find access list checkpoints by checkpoint ID.

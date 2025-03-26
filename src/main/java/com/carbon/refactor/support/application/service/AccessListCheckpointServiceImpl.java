@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.carbon.refactor.support.domain.entity.AccessListCheckpoint;
+import com.carbon.refactor.support.domain.entity.AccessListCheckpointId;
 import com.carbon.refactor.support.domain.repository.AccessListCheckpointRepository;
 import com.carbon.refactor.support.domain.service.AccessListCheckpointService;
 
@@ -23,7 +24,7 @@ public class AccessListCheckpointServiceImpl implements AccessListCheckpointServ
     
     @Override
     @Transactional(readOnly = true)
-    public Optional<AccessListCheckpoint> findById(Integer id) {
+    public Optional<AccessListCheckpoint> findById(AccessListCheckpointId id) {
         return accessListCheckpointRepository.findById(id);
     }
     
@@ -35,7 +36,7 @@ public class AccessListCheckpointServiceImpl implements AccessListCheckpointServ
     
     @Override
     @Transactional(readOnly = true)
-    public boolean existsById(Integer id) {
+    public boolean existsById(AccessListCheckpointId id) {
         return accessListCheckpointRepository.existsById(id);
     }
     

@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 import com.carbon.refactor.domain.entity.Proposal;
 import com.carbon.refactor.domain.repository.ProposalRepository;
 
-@Component
+@Component("proposalRepository")
 @RequiredArgsConstructor
 public class ProposalRepositoryImpl implements ProposalRepository {
     

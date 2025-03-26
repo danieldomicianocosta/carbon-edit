@@ -7,12 +7,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.carbon.refactor.support.domain.entity.SellerPartner;
+import com.carbon.refactor.support.domain.entity.SellerPartnerId;
 
 /**
  * JPA repository interface for SellerPartner entities.
  */
 @Repository
-public interface JpaSellerPartnerRepository extends JpaRepository<SellerPartner, Integer> {
+public interface JpaSellerPartnerRepository extends JpaRepository<SellerPartner, SellerPartnerId> {
     
     /**
      * Find seller partners by seller ID.

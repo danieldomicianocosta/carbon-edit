@@ -1,13 +1,14 @@
 package com.carbon.refactor.support.domain.service;
 
 import com.carbon.refactor.support.domain.entity.SellerPartner;
+import com.carbon.refactor.support.domain.entity.SellerPartnerId;
 import java.util.List;
 import java.util.Optional;
 
 /**
  * Service interface for read-only operations on SellerPartner entities.
  */
-public interface SellerPartnerService extends ReadOnlyService<SellerPartner, Integer> {
+public interface SellerPartnerService extends ReadOnlyService<SellerPartner, SellerPartnerId> {
     
     /**
      * Find seller partners by seller ID.

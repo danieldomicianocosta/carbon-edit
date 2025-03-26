@@ -90,6 +90,22 @@
    - Complex relationships between proposal-related entities
    - May require careful management of dependencies
 
+4. **Apache Camel 4.x Integration**
+   - Project uses Apache Camel 4.x which is compatible with Jakarta EE
+   - Camel 4.x uses platform-http component instead of servlet component
+   - Camel components are configured in CamelConfig, CamelServletConfig, and CamelBeansConfig
+   - Camel routes are defined in FindProposalRoute and UpdateProposalRoute
+   - Camel processors, aggregators, and enrichers are used to implement Enterprise Integration Patterns
+   - Previous compatibility issues with Jakarta EE have been resolved by upgrading to Camel 4.x
+   - Camel 4.x Simple language syntax for accessing exchange properties uses `${exchangeProperty.xxx}` instead of `${property.xxx}`
+   - Camel bean registry requires explicit bean names for repositories and services
+   - CamelRepositoryConfig class is used to register beans with explicit names for Camel routes
+
+5. **Bean Definition Conflicts**
+   - Multiple implementations of the same interface can cause bean definition conflicts
+   - Example: CompleteProposalController and CamelCompleteProposalController both implement the same endpoints
+   - Solution: Use @Primary annotation to specify which implementation should be used
+
 ## Evolution of Project Decisions
 
 As this is the initial memory bank setup, there is no documented history of project decisions. Future updates will track significant decisions and their evolution.

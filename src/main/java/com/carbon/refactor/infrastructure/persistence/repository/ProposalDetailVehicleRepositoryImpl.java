@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import com.carbon.refactor.domain.entity.ProposalDetailVehicle;
 import com.carbon.refactor.domain.repository.ProposalDetailVehicleRepository;
 
-@Component
+@Component("proposalDetailVehicleRepository")
 @RequiredArgsConstructor
 public class ProposalDetailVehicleRepositoryImpl implements ProposalDetailVehicleRepository {
     

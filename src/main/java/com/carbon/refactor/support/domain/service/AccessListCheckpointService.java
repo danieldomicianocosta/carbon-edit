@@ -1,13 +1,14 @@
 package com.carbon.refactor.support.domain.service;
 
 import com.carbon.refactor.support.domain.entity.AccessListCheckpoint;
+import com.carbon.refactor.support.domain.entity.AccessListCheckpointId;
 import java.util.List;
 import java.util.Optional;
 
 /**
  * Service interface for read-only operations on AccessListCheckpoint entities.
  */
-public interface AccessListCheckpointService extends ReadOnlyService<AccessListCheckpoint, Integer> {
+public interface AccessListCheckpointService extends ReadOnlyService<AccessListCheckpoint, AccessListCheckpointId> {
     
     /**
      * Find access list checkpoints by checkpoint ID.

@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
 import com.carbon.refactor.support.domain.entity.AccessListCheckpoint;
+import com.carbon.refactor.support.domain.entity.AccessListCheckpointId;
 import com.carbon.refactor.support.domain.repository.AccessListCheckpointRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -20,7 +21,7 @@ public class AccessListCheckpointRepositoryImpl implements AccessListCheckpointR
     private final JpaAccessListCheckpointRepository jpaAccessListCheckpointRepository;
     
     @Override
-    public Optional<AccessListCheckpoint> findById(Integer id) {
+    public Optional<AccessListCheckpoint> findById(AccessListCheckpointId id) {
         return jpaAccessListCheckpointRepository.findById(id);
     }
     
@@ -30,7 +31,7 @@ public class AccessListCheckpointRepositoryImpl implements AccessListCheckpointR
     }
     
     @Override
-    public boolean existsById(Integer id) {
+    public boolean existsById(AccessListCheckpointId id) {
         return jpaAccessListCheckpointRepository.existsById(id);
     }
     

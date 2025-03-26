@@ -1,13 +1,14 @@
 package com.carbon.refactor.support.domain.repository;
 
 import com.carbon.refactor.support.domain.entity.AccessListCheckpoint;
+import com.carbon.refactor.support.domain.entity.AccessListCheckpointId;
 import java.util.List;
 import java.util.Optional;
 
 /**
  * Repository interface for read-only operations on AccessListCheckpoint entities.
  */
-public interface AccessListCheckpointRepository extends ReadOnlyRepository<AccessListCheckpoint, Integer> {
+public interface AccessListCheckpointRepository extends ReadOnlyRepository<AccessListCheckpoint, AccessListCheckpointId> {
     
     /**
      * Find access list checkpoints by checkpoint ID.

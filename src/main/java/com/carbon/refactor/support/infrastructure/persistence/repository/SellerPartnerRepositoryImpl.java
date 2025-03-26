@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
 import com.carbon.refactor.support.domain.entity.SellerPartner;
+import com.carbon.refactor.support.domain.entity.SellerPartnerId;
 import com.carbon.refactor.support.domain.repository.SellerPartnerRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -20,7 +21,7 @@ public class SellerPartnerRepositoryImpl implements SellerPartnerRepository {
     private final JpaSellerPartnerRepository jpaSellerPartnerRepository;
     
     @Override
-    public Optional<SellerPartner> findById(Integer id) {
+    public Optional<SellerPartner> findById(SellerPartnerId id) {
         return jpaSellerPartnerRepository.findById(id);
     }
     
@@ -30,7 +31,7 @@ public class SellerPartnerRepositoryImpl implements SellerPartnerRepository {
     }
     
     @Override
-    public boolean existsById(Integer id) {
+    public boolean existsById(SellerPartnerId id) {
         return jpaSellerPartnerRepository.existsById(id);
     }
     

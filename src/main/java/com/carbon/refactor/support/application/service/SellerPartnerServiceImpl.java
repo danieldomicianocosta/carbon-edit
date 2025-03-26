@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.carbon.refactor.support.domain.entity.SellerPartner;
+import com.carbon.refactor.support.domain.entity.SellerPartnerId;
 import com.carbon.refactor.support.domain.repository.SellerPartnerRepository;
 import com.carbon.refactor.support.domain.service.SellerPartnerService;
 
@@ -23,7 +24,7 @@ public class SellerPartnerServiceImpl implements SellerPartnerService {
     
     @Override
     @Transactional(readOnly = true)
-    public Optional<SellerPartner> findById(Integer id) {
+    public Optional<SellerPartner> findById(SellerPartnerId id) {
         return sellerPartnerRepository.findById(id);
     }
     
@@ -35,7 +36,7 @@ public class SellerPartnerServiceImpl implements SellerPartnerService {
     
     @Override
     @Transactional(readOnly = true)
-    public boolean existsById(Integer id) {
+    public boolean existsById(SellerPartnerId id) {
         return sellerPartnerRepository.existsById(id);
     }
     

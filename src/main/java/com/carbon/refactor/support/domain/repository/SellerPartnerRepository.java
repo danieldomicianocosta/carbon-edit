@@ -1,13 +1,14 @@
 package com.carbon.refactor.support.domain.repository;
 
 import com.carbon.refactor.support.domain.entity.SellerPartner;
+import com.carbon.refactor.support.domain.entity.SellerPartnerId;
 import java.util.List;
 import java.util.Optional;
 
 /**
  * Repository interface for read-only operations on SellerPartner entities.
  */
-public interface SellerPartnerRepository extends ReadOnlyRepository<SellerPartner, Integer> {
+public interface SellerPartnerRepository extends ReadOnlyRepository<SellerPartner, SellerPartnerId> {
     
     /**
      * Find seller partners by seller ID.
